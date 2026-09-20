@@ -1,0 +1,95 @@
+SITE / CONVITE DIGITAL DE CASAMENTO PREMIUM
+===========================================
+
+Obrigado por adquirir este template.
+
+O QUE VOCÊ RECEBE
+- Site responsivo para celular e computador
+- Contagem regressiva automática
+- Nossa História
+- Informações de cerimônia, recepção e traje
+- Galeria de fotos
+- RSVP pelo WhatsApp
+- Link para localização
+- Link para lista de presentes
+- Informações para convidados
+- Música opcional
+- Arquivo de configuração simplificado
+
+1. COMO PERSONALIZAR
+Abra o arquivo config.js em um editor de texto.
+Altere nomes, data, história, horários, local, WhatsApp, links e informações.
+
+IMPORTANTE SOBRE A DATA
+Em dateISO, mantenha este formato:
+2027-09-12T16:30:00
+Ano-Mês-DiaTHora:Minuto:Segundo
+
+2. COMO COLOCAR FOTOS
+Abra a pasta images e substitua pelos seus arquivos:
+casal.jpg
+foto-1.jpg
+foto-2.jpg
+foto-3.jpg
+foto-4.jpg
+
+Se preferir outros nomes, altere os caminhos dentro de config.js.
+
+3. RSVP / CONFIRMAÇÃO DE PRESENÇA
+Este modelo usa WhatsApp, portanto NÃO precisa de banco de dados.
+Quando o convidado preenche o formulário, o site abre uma mensagem pronta para o WhatsApp configurado em config.js.
+
+No campo whatsapp use DDI + DDD + número, somente números.
+Exemplo fictício: 5511999999999
+
+4. LISTA DE PRESENTES
+Em giftURL, coloque o link da lista de presentes do casal.
+Pode ser uma lista externa ou outro site criado por você.
+
+5. LOCALIZAÇÃO
+Em mapURL, cole o link compartilhável do Google Maps para o local do evento.
+
+6. MÚSICA (OPCIONAL)
+Coloque um arquivo de áudio na pasta principal do site e, em musicFile, informe o nome.
+Exemplo: musicFile: "musica.mp3"
+Use apenas áudio para o qual você possua os direitos/licença necessários.
+
+7. TESTE ANTES DE PUBLICAR
+Abra index.html e confira:
+- nomes e data
+- contagem regressiva
+- localização
+- WhatsApp
+- RSVP
+- lista de presentes
+- fotos
+- visual no celular
+
+8. PUBLICAR GRATUITAMENTE NO GITHUB PAGES
+1) Crie uma conta no GitHub.
+2) Crie um novo repositório.
+3) Envie TODOS os arquivos e pastas deste template.
+4) Abra Settings > Pages.
+5) Em Build and deployment, selecione Deploy from a branch.
+6) Escolha a branch main e a pasta /(root).
+7) Salve e aguarde a publicação.
+
+9. PUBLICAR NO NETLIFY
+1) Crie uma conta no Netlify.
+2) Use a opção de deploy manual / drag and drop.
+3) Envie a pasta completa do site.
+4) Aguarde o endereço público ser criado.
+
+10. DOMÍNIO PRÓPRIO
+GitHub Pages e Netlify permitem configurar domínio próprio. A compra e renovação do domínio não estão incluídas neste produto.
+
+11. SUPORTE / LIMITES
+Este produto é um template de código-fonte. Serviços de personalização, domínio, hospedagem paga, criação de contas externas e alterações sob medida não estão incluídos, salvo quando contratados separadamente.
+
+12. LICENÇA DE USO
+Licença para uso em um projeto/site final por compra, salvo se o vendedor informar condições diferentes.
+É proibido revender, redistribuir, compartilhar ou disponibilizar os arquivos-fonte deste template como produto próprio ou gratuito.
+Você pode personalizar o template para criar o seu site final.
+
+DICA
+Faça uma cópia da pasta original antes de começar a editar.
