@@ -1,0 +1,26 @@
+SITE DE CASAMENTO PREMIUM 2.0 — EDITOR VISUAL
+
+1. Abra editar.html no navegador.
+2. Preencha nomes, data, horário, história, locais, WhatsApp e demais informações.
+3. Clique em SALVAR ALTERAÇÕES.
+4. Clique em VISUALIZAR MEU SITE.
+5. O navegador guarda as alterações localmente no aparelho usado.
+
+IMPORTANTE SOBRE PUBLICAÇÃO
+O editor visual evita que você precise editar HTML para preencher os dados durante a personalização.
+Por segurança dos navegadores, um site estático não consegue sobrescrever sozinho os arquivos hospedados no GitHub.
+Use “Baixar configuração” para guardar uma cópia dos dados preenchidos e siga as instruções de publicação do pacote.
+
+FOTOS
+O editor permite escolher fotos para a etapa de personalização. Para publicação permanente, coloque as imagens na pasta images conforme os nomes indicados no pacote.
+
+ARQUIVOS PRINCIPAIS
+index.html — site
+editar.html — editor visual
+config.js — configuração compatível com o template
+style.css — aparência
+script.js — funcionalidades
+images/ — fotos
+
+LICENÇA
+Uso pessoal/comercial para criação do site final do comprador. Não é permitida a revenda ou redistribuição do template como produto concorrente.

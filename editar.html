@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Editor Visual | Site de Casamento Premium</title>
+<style>
+:root{--bg:#f7f3ec;--card:#fff;--ink:#25372e;--muted:#6d776f;--accent:#5f755f;--line:#e5ded2}
+*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:var(--bg);color:var(--ink)}
+header{padding:28px 20px;text-align:center;background:#fff;border-bottom:1px solid var(--line)}
+header h1{margin:0 0 8px;font-family:Georgia,serif}.wrap{max-width:1000px;margin:auto;padding:24px}
+.note{background:#eef3eb;border:1px solid #d8e2d3;padding:16px;border-radius:16px;margin-bottom:20px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.full{grid-column:1/-1}
+label{display:block;font-size:13px;font-weight:700;margin-bottom:6px}input,textarea{width:100%;padding:12px;border:1px solid var(--line);border-radius:10px;background:#fff;font:inherit}
+textarea{min-height:100px;resize:vertical}.card{background:var(--card);padding:20px;border-radius:18px;margin-bottom:18px;box-shadow:0 8px 25px #0000000c}
+.card h2{font-family:Georgia,serif;margin-top:0}.actions{display:flex;flex-wrap:wrap;gap:10px;position:sticky;bottom:0;background:#f7f3ecef;padding:14px 0}
+button,a.btn{border:0;border-radius:999px;padding:13px 18px;font-weight:700;cursor:pointer;text-decoration:none;display:inline-block}
+.primary{background:var(--ink);color:#fff}.secondary{background:#fff;color:var(--ink);border:1px solid var(--line)}
+small{color:var(--muted)}@media(max-width:700px){.grid{grid-template-columns:1fr}.full{grid-column:auto}}
+</style>
+</head>
+<body>
+<header><h1>💍 Personalize seu site</h1><div>Preencha os campos abaixo. Você não precisa editar HTML.</div></header>
+<div class="wrap">
+<div class="note"><strong>Como funciona:</strong> personalize → salve → visualize. Quando estiver satisfeito, clique em <strong>Baixar configuração</strong>. O arquivo gerado guarda os dados do seu site e acompanha o pacote para publicação.</div>
+
+<div class="card"><h2>O casal</h2><div class="grid">
+<div><label>Nome 1</label><input id="nome1"></div><div><label>Nome 2</label><input id="nome2"></div>
+<div><label>Data do casamento</label><input id="data" type="date"></div><div><label>Horário</label><input id="horario" type="time"></div>
+<div class="full"><label>Frase de abertura</label><input id="frase"></div>
+<div class="full"><label>Nossa história</label><textarea id="historia"></textarea></div>
+</div></div>
+
+<div class="card"><h2>Evento</h2><div class="grid">
+<div><label>Local da cerimônia</label><input id="cerimonia"></div><div><label>Local da recepção</label><input id="recepcao"></div>
+<div class="full"><label>Endereço</label><input id="endereco"></div>
+<div><label>Link do mapa</label><input id="mapa" placeholder="https://..."></div><div><label>Dress code</label><input id="dress"></div>
+</div></div>
+
+<div class="card"><h2>Confirmação e contato</h2><div class="grid">
+<div><label>WhatsApp com DDD</label><input id="whatsapp" placeholder="5511999999999"></div>
+<div><label>Data limite RSVP</label><input id="limite" type="date"></div>
+<div class="full"><label>Informações aos convidados</label><textarea id="infos"></textarea></div>
+</div></div>
+
+<div class="card"><h2>Fotos</h2>
+<p><small>Selecione imagens para pré-visualização neste navegador. Para a versão publicada, mantenha as fotos também na pasta <strong>images</strong> conforme o manual.</small></p>
+<div class="grid"><div><label>Foto principal</label><input id="fotoPrincipal" type="file" accept="image/*"></div>
+<div><label>Galeria (até 6)</label><input id="galeria" type="file" accept="image/*" multiple></div></div>
+</div>
+
+<div class="actions">
+<button class="primary" id="salvar">Salvar alterações</button>
+<a class="btn secondary" href="index.html" target="_blank">Visualizar meu site</a>
+<button class="secondary" id="baixar">Baixar configuração</button>
+<button class="secondary" id="reset">Restaurar exemplo</button>
+</div>
+</div>
+<script>
+const ids=["nome1","nome2","data","horario","frase","historia","cerimonia","recepcao","endereco","mapa","dress","whatsapp","limite","infos"];
+const exemplo={nome1:"Laura",nome2:"Gabriel",data:"2027-09-12",horario:"16:30",frase:"O nosso para sempre começa aqui.",historia:"Nossa história começou de um jeito simples e se transformou no nosso lugar favorito.",cerimonia:"Espaço Jardim",recepcao:"Espaço Jardim",endereco:"Av. das Flores, 1000",mapa:"https://maps.google.com",dress:"Esporte fino",whatsapp:"5511999999999",limite:"2027-08-20",infos:"Chegue com antecedência e venha celebrar conosco."};
+function carregar(){
+ const d=JSON.parse(localStorage.getItem("weddingEditor")||"null")||exemplo;
+ ids.forEach(id=>document.getElementById(id).value=d[id]||"");
+}
+function dados(){let d={};ids.forEach(id=>d[id]=document.getElementById(id).value);return d}
+document.getElementById("salvar").onclick=()=>{localStorage.setItem("weddingEditor",JSON.stringify(dados()));alert("Alterações salvas! Abra 'Visualizar meu site'.")};
+document.getElementById("baixar").onclick=()=>{const blob=new Blob([JSON.stringify(dados(),null,2)],{type:"application/json"});const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="meu-casamento.json";a.click();URL.revokeObjectURL(a.href)};
+document.getElementById("reset").onclick=()=>{localStorage.removeItem("weddingEditor");carregar();alert("Exemplo restaurado.")};
+carregar();
+</script></body></html>
